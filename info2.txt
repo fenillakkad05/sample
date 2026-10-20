@@ -1,0 +1,55 @@
+mkdir gitSample
+cd gitSample
+
+git init
+git branch -M main
+
+echo "<h1>Welcome to Git Sample</h1>" > index.html
+
+git add index.html
+git commit -m "Add index.html"
+
+-----------------------------------------------------------
+
+git switch -c development
+
+echo "<h1>About Us</h1>" > about.html
+
+git add about.html
+git commit -m "Add about.html"
+
+------------------------------- connect GitHub ------------------
+
+git remote add origin https://github.com/YOUR_USERNAME/gitSample.git
+
+git remote -v
+
+------------------------- push both --------------------
+git switch main
+git push -u origin main
+
+git switch development
+git push -u origin development
+
+------------------------- ADD REAME ----------------------
+
+----------------------------- pull 
+
+git switch main
+git pull origin main
+
+
+git merge development
+
+
+
+git push origin main
+
+
+git log --oneline --graph
+
+----------------------- delete ----------------------
+
+git switch main
+git branch -d development
+git push origin --delete development
