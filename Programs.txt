@@ -1,0 +1,111 @@
+javac Calculator.java
+java Calculator
+
+-----------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        double a = sc.nextDouble();
+
+        System.out.print("Enter operator (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+
+        System.out.print("Enter second number: ");
+        double b = sc.nextDouble();
+
+        switch (op) {
+            case '+':
+                System.out.println("Result = " + (a + b));
+                break;
+
+            case '-':
+                System.out.println("Result = " + (a - b));
+                break;
+
+            case '*':
+                System.out.println("Result = " + (a * b));
+                break;
+
+            case '/':
+                if (b != 0)
+                    System.out.println("Result = " + (a / b));
+                else
+                    System.out.println("Cannot divide by zero");
+                break;
+
+            default:
+                System.out.println("Invalid operator");
+        }
+
+        sc.close();
+    }
+}
+
+---------------------------------------------------------------------------
+
+a = float(input("Enter first number: "))
+op = input("Enter operator (+, -, *, /): ")
+b = float(input("Enter second number: "))
+
+if op == "+":
+    print("Result =", a + b)
+
+elif op == "-":
+    print("Result =", a - b)
+
+elif op == "*":
+    print("Result =", a * b)
+
+elif op == "/":
+    if b != 0:
+        print("Result =", a / b)
+    else:
+        print("Cannot divide by zero")
+
+else:
+    print("Invalid operator")
+
+--------------------------------------------------------------------
+python calculator.py
+
+
+--------------------------- Form submission ----------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form id="myForm">
+        Name:
+        <input type="text" id="name" required>
+        <br><br>
+
+        Email:
+        <input type="email" id="email" required>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("message").innerHTML =
+                "Form Submitted Successfully!";
+        });
+    </script>
+
+</body>
+</html>
